@@ -1,0 +1,4 @@
+{
+    "cortex-debug.openocdPath": "D:\\RoboMaster\\xpack-openocd-0.12.0-7\\bin\\openocd.exe",
+    "cortex-debug.armToolchainPath": "D:\\RoboMaster\\bin"
+}

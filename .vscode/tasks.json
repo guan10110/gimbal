@@ -1,0 +1,41 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "C:\\msys64\\usr\\bin\\bash.exe",
+            "args": [
+                "-lc",
+                "cd /d/RoboMaster/shaobingyuntai/shaobing_gimbal-main/shaobing_gimbal-main && PATH=/d/RoboMaster/bin:$PATH /usr/bin/make -j4"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "flash",
+            "type": "shell",
+            "command": "D:\\RoboMaster\\xpack-openocd-0.12.0-7\\bin\\openocd.exe",
+            "args": [
+                "-f",
+                "interface/cmsis-dap.cfg",
+                "-f",
+                "target/stm32h7x.cfg",
+                "-c",
+                "adapter speed 4000",
+                "-c",
+                "program \"D:/RoboMaster/shaobingyuntai/shaobing_gimbal-main/shaobing_gimbal-main/build/shaobing_gimbal-main.elf\" verify reset exit"
+            ],
+            "options": {
+                "cwd": "D:/RoboMaster/shaobingyuntai/shaobing_gimbal-main/shaobing_gimbal-main"
+            },
+            "dependsOn": "build",
+            "problemMatcher": []
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "DAPLink Download and Debug",
+            "type": "cortex-debug",
+            "request": "launch",
+            "servertype": "openocd",
+            "cwd": "D:\\RoboMaster\\shaobingyuntai\\shaobing_gimbal-main\\shaobing_gimbal-main",
+            "executable": "D:/RoboMaster/shaobingyuntai/shaobing_gimbal-main/shaobing_gimbal-main/build/shaobing_gimbal-main.elf",
+            "device": "STM32H723VGTx",
+            "configFiles": [
+                "interface/cmsis-dap.cfg",
+                "target/stm32h7x.cfg"
+            ],
+            "searchDir": [],
+            "runToEntryPoint": "main",
+            "preLaunchTask": "build",
+            "serverArgs": [
+                "-c",
+                "adapter speed 4000"
+            ]
+        }
+    ]
+}
